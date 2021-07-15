@@ -27,7 +27,7 @@ import javax.validation.constraints.NotBlank;
       @TableId(value = "id", type = IdType.AUTO)
       private Integer id;
     @NotBlank(message = "姓名不能为空")
-    private String username;
+    private String userName;
 
     private String avatar;
     @NotBlank(message = "邮箱不能为空")

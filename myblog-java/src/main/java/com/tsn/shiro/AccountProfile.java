@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class AccountProfile implements Serializable {
     private Integer id;
 
-    private String username;
+    private String userName;
 
     private String avatar;
 

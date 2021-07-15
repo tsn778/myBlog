@@ -35,6 +35,8 @@ public class AccountRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+
+        System.out.println("授权--------------");
         return null;
     }
 
@@ -51,7 +53,7 @@ public class AccountRealm extends AuthorizingRealm {
         }
         AccountProfile accountProfile = new AccountProfile();
         BeanUtil.copyProperties(user,accountProfile);
-        System.out.println("--------------");
-        return new SimpleAuthenticationInfo(accountProfile,jwtToken,getName());
+        System.out.println("认证--------------");
+        return new SimpleAuthenticationInfo(accountProfile,jwtToken.getCredentials(),getName());
     }
 }
