@@ -11,13 +11,13 @@ import java.io.Serializable;
  */
 @Data
 public class Result implements Serializable {
-    private String code;
+    private Integer code;
     private String msg;
     private Object data;
 
     public static Result success(Object data) {
         Result m = new Result();
-        m.setCode("200");
+        m.setCode(200);
         m.setData(data);
         m.setMsg("操作成功");
         return m;
@@ -25,7 +25,7 @@ public class Result implements Serializable {
 
     public static Result success(String mess, Object data) {
         Result m = new Result();
-        m.setCode("200");
+        m.setCode(200);
         m.setData(data);
         m.setMsg(mess);
         return m;
@@ -33,7 +33,7 @@ public class Result implements Serializable {
 
     public static Result failure(String mess) {
         Result m = new Result();
-        m.setCode("500");
+        m.setCode(500);
         m.setData(null);
         m.setMsg(mess);
         return m;
@@ -41,13 +41,13 @@ public class Result implements Serializable {
 
     public static Result failure(String mess, Object data) {
         Result m = new Result();
-        m.setCode("500");
+        m.setCode(500);
         m.setData(data);
         m.setMsg(mess);
         return m;
     }
 
-    public static Result failure(String code, String msg, Object data) {
+    public static Result failure(Integer code, String msg, Object data) {
         Result r = new Result();
         r.setCode(code);
         r.setMsg(msg);

@@ -12,6 +12,7 @@ import com.tsn.service.BlogService;
 import com.tsn.service.UserService;
 import com.tsn.util.ShiroUtil;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.validation.annotation.Validated;
@@ -40,6 +41,7 @@ public class BlogController {
     @RequiresAuthentication
     @GetMapping("/index")
     public Result index() {
+        System.out.println("sdsd");
         return Result.success(null);
     }
 
@@ -48,7 +50,7 @@ public class BlogController {
 //        User user = userService.getById(1);
         return Result.success(user);
     }
-
+    @RequiresPermissions("test")
     @GetMapping("/blogs")
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage) {
 

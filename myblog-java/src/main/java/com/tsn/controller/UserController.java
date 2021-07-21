@@ -59,12 +59,19 @@ public class UserController {
                 .put("username", user.getUserName())
                 .put("avatar", user.getAvatar())
                 .put("email", user.getEmail())
+                .put("token", jwt)
                 .map()
         );
     }
     @RequiresAuthentication
+    @GetMapping("/getUserInfo")
+    public  Result GetUserInfo(@RequestParam("username") String userName){
+        System.out.println(userName);
+        return userService.getUserInfo(userName);
+    }
+    @RequiresAuthentication
     @GetMapping("/logout")
-    public  Result logOUt(){
+    public  Result logout(){
         SecurityUtils.getSubject().logout();
         return Result.success(null);
     }

@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = ShiroException.class)
     public  Result handler(ShiroException e){
         log.error("运行时异常：---------{}",e);
-        return  Result.failure("401",e.getMessage(),null);
+        return  Result.failure(401,e.getMessage(),null);
     }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = MethodArgumentNotValidException.class)

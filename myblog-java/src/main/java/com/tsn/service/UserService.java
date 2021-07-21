@@ -1,5 +1,6 @@
 package com.tsn.service;
 
+import com.tsn.common.Result;
 import com.tsn.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-07-08
  */
 public interface UserService extends IService<User> {
-
+    Result getUserInfo(String userName);
 }
