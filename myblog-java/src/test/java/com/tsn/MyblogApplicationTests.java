@@ -3,6 +3,7 @@ package com.tsn;
 import com.tsn.entity.Role;
 import com.tsn.mapper.UserMapper;
 import com.tsn.service.RoleService;
+import com.tsn.service.RouterService;
 import com.tsn.service.UserService;
 import com.tsn.util.JwtUtils;
 import org.junit.jupiter.api.Test;
@@ -20,6 +21,8 @@ class MyblogApplicationTests {
     JwtUtils jwtUtils;
     @Autowired
     RoleService roleService;
+    @Autowired
+    RouterService routerService;
     @Test
     void contextLoads() {
 
@@ -39,6 +42,9 @@ class MyblogApplicationTests {
         roles.add(role);
         System.out.println(roles);
     }
-
+    @Test
+    void t4(){
+        routerService.routers().forEach(System.out::println);
+    }
 
 }

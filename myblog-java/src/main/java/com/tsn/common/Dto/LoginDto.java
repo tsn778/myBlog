@@ -1,4 +1,4 @@
-package com.tsn.common;
+package com.tsn.common.Dto;
 
 
 import lombok.Data;
