@@ -41,6 +41,8 @@ public class RouterDto implements Serializable {
 
     private MetaDto meta;
 
+    private Boolean hidden;
+
     private List<RouterDto> children;
 
 }

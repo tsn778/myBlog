@@ -42,6 +42,7 @@ public class RouterServiceImpl extends ServiceImpl<RouterMapper, Router> impleme
         routerDto.setName(router.getName());
         routerDto.setComponent(router.getComponent());
         routerDto.setPath(router.getPath());
+        routerDto.setRedirect(router.getRedirect());
         MetaDto metaDto = new MetaDto();
         metaDto.setIcon(router.getIcon());
         metaDto.setTitle(router.getTitle());
